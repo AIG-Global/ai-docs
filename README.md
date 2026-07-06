@@ -1,36 +1,9 @@
-# ai-docs
+# AIG Documentation
 
-Technical documentation for AIG.
+This repository contains the official documentation for the AIG Platform and the North Star ecosystem.
 
-## Overview
-Comprehensive documentation including architecture, API specifications, deployment guides, and developer resources.
+Project Genesis officially started in July 2026.
 
-## Contents
-- Architecture documentation
-- API Reference
-- Deployment guides
-- Development workflows
-- Best practices
-- Troubleshooting guides
+The documentation in this repository serves as the single source of truth for architecture, product planning, engineering standards, security, governance and operations.
 
-## Documentation Structure
-```
-ai-docs/
-├── architecture/
-├── api/
-├── deployment/
-├── development/
-├── guides/
-└── README.md
-```
-
-## Getting Started
-1. Navigate to the relevant section
-2. Read the applicable documentation
-3. Refer to API specifications for integrations
-
-## Contributing
-Contributions to documentation are welcome. Please ensure clarity and accuracy.
-
-## License
-MIT
+Every major technical and product decision is documented here before implementation.
