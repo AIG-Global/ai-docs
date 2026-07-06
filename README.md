@@ -35,3 +35,13 @@ This repository defines what is being built and why. The implementation and engi
 
 - [ARCHITECTURE.md](ARCHITECTURE.md)
 - [DECISIONS.md](DECISIONS.md)
+- [ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md)
+
+## Engineering Standards
+
+This repository now documents the shared engineering expectations for all repositories:
+
+- Core repository files: README, ARCHITECTURE, CONTRIBUTING, SECURITY, CHANGELOG, LICENSE
+- README expectations: purpose, responsibilities, technology stack, dependencies, local run steps, deployment, and related repositories
+- Health checks: /health/ready, /health/live, /version
+- Logging: timestamp, service, environment, request ID, correlation ID, user ID where appropriate, severity, and message
