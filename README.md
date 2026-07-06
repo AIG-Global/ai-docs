@@ -1,7 +1,7 @@
 # AI Docs
 
 Title: AI Docs
-Version: 0.1.0
+Version: 0.3.0
 Status: Draft
 Owner: AIG Engineering
 Last Updated: 2026-07-06
@@ -9,6 +9,14 @@ Review Date: 2026-07-06
 Approved By: AIG Engineering
 
 This repository contains the core documentation for the AIG Platform and North Star ecosystem.
+
+## Repository Role
+
+This repository defines what is being built and why. The implementation and engineering assets live in the separate platform repository.
+
+## Related Repository
+
+- [aig-platform](https://github.com/AIG-Global/aig-platform)
 
 ## Structure
 

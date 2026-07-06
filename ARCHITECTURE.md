@@ -1,7 +1,7 @@
 # Architecture
 
 Title: Architecture
-Version: 0.1.0
+Version: 0.3.0
 Status: Draft
 Owner: AIG Engineering
 Last Updated: 2026-07-06
