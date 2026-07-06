@@ -1,0 +1,53 @@
+name: Sync Documents
+
+on:
+  workflow_dispatch:
+    inputs:
+      document_path:
+        description: 'Path to the target document within the repo'
+        required: true
+        type: string
+      document_content:
+        description: 'Markdown content to write to the file'
+        required: true
+        type: string
+      commit_message:
+        description: 'Commit message for the update'
+        required: false
+        default: 'docs: update document from automation'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  sync-document:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create or update document
+        run: |
+          mkdir -p "$(dirname "$DOCUMENT_PATH")"
+          cat > "$DOCUMENT_PATH" <<'EOF'
+          $DOCUMENT_CONTENT
+          EOF
+        env:
+          DOCUMENT_PATH: ${{ github.event.inputs.document_path }}
+          DOCUMENT_CONTENT: ${{ github.event.inputs.document_content }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DOCUMENT_PATH"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "$COMMIT_MESSAGE"
+          git push
+        env:
+          DOCUMENT_PATH: ${{ github.event.inputs.document_path }}
+          COMMIT_MESSAGE: ${{ github.event.inputs.commit_message }}
